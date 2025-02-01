@@ -20,20 +20,7 @@
             position: relative;
             background-attachment: fixed;
         }
-        .bouquet {
-            width: 250px;
-            height: 300px;
-            background-image: url('https://github.com/hanzla010101/For-you-/blob/main/C98917BC-66E3-4289-A8FA-3B698706DCB4.png?raw=true'); /* Replace with the correct link */
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            animation: sway 5s ease-in-out infinite, float 4s ease-in-out infinite, glow 1.5s alternate infinite;
-            transition: transform 0.3s ease-in-out;
-        }
-        .bouquet:hover {
-            transform: scale(1.05) rotate(5deg);
-        }
+
         .text {
             font-size: 40px;
             font-weight: bold;
@@ -44,26 +31,98 @@
             margin-bottom: 30px;
             animation: textGlow 2s infinite alternate;
         }
+
+        .button {
+            font-size: 22px;
+            background-color: #9c27b0;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(156, 39, 176, 0.5);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #7b1fa2;
+            transform: scale(1.1);
+        }
+
+        .bouquet-container {
+            display: none;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .bouquet {
+            width: 250px;
+            height: 300px;
+            background-image: url('https://github.com/hanzla010101/For-you-/blob/main/C98917BC-66E3-4289-A8FA-3B698706DCB4.png?raw=true'); /* Replace with the correct link */
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: sway 5s ease-in-out infinite, float 4s ease-in-out infinite, glow 1.5s alternate infinite;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .bouquet-message {
+            font-size: 20px;
+            color: #6a1b9a;
+            font-style: italic;
+            max-width: 500px;
+            margin: 0 auto;
+            animation: textGlow 2s infinite alternate;
+        }
+
         @keyframes sway {
             0% { transform: rotate(-5deg) translateY(-10px); }
             50% { transform: rotate(5deg) translateY(10px); }
             100% { transform: rotate(-5deg) translateY(-10px); }
         }
+
         @keyframes float {
             0% { transform: translateY(-10px); }
             50% { transform: translateY(10px); }
             100% { transform: translateY(-10px); }
         }
+
         @keyframes glow {
             0% { box-shadow: 0 0 15px rgba(156, 39, 176, 0.8); }
             50% { box-shadow: 0 0 30px rgba(156, 39, 176, 1); }
             100% { box-shadow: 0 0 15px rgba(156, 39, 176, 0.8); }
         }
+
         @keyframes textGlow {
             0% { text-shadow: 0 0 15px rgba(156, 39, 176, 0.8); }
             100% { text-shadow: 0 0 25px rgba(156, 39, 176, 1); }
         }
+
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
-            100% { background-position:
+            100% { background-position: 0% 50%; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="text">A Special Bouquet for You 💜</div>
+    <button class="button" onclick="showBouquet()">Click Here</button>
+
+    <div class="bouquet-container" id="bouquetContainer">
+        <div class="bouquet"></div>  <!-- Bouquet Animation -->
+        <div class="bouquet-message">
+            A moment to remind you of how special you are, just for being you. 💜
+        </div>
+    </div>
+
+    <script>
+        function showBouquet() {
+            document.getElementById('bouquetContainer').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
